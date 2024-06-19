@@ -25,3 +25,4 @@ const PostInput = ({ user }: { user: any }) => {
     )
 }
 
+export default PostInput
