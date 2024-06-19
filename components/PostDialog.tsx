@@ -25,6 +25,13 @@ export function PostDialog({ setOpen, open, src }: { setOpen: any, open: boolean
     }
 
     
+    const fileChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            const dataUrl = await readFileAsDataUrl(file);
+            setSelectedFile(dataUrl);
+        }
+    }
     
 
     
