@@ -24,5 +24,7 @@ const newsItems: NAVITEMS[] = [
   },
 ]
 
-
+const News = () => {
+  
+}
 
