@@ -13,3 +13,7 @@ export const GET = async (req:NextRequest, {params}:{params:{postId:string}}) =>
         return NextResponse.json({error:'An error occurred.'});
     }
 }
+// post likes
+export const POST = async (req:NextRequest, {params}:{params:{postId:string}}) => {
+    
+}
