@@ -4,7 +4,8 @@ import Posts from './Posts'
 import { getAllPosts } from '@/lib/serveractions';
 
 const Feed = async ({user}:{user:any}) => {
-   
+    const userData = JSON.parse(JSON.stringify(user));
+    const posts = await getAllPosts();
     
   
 }
