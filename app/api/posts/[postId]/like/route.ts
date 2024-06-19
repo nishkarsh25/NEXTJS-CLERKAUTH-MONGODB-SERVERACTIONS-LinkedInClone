@@ -4,5 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 // get likes
 export const GET = async (req:NextRequest, {params}:{params:{postId:string}}) => {
-    
+    try {
+        await connectDB();
+        const post = await Post.findById({_id:params.postId});
+        if(!post) return NextResponse.json({error:'Post not found.'});
+        return NextResponse.json(post.likes);
+    } catch (error:any) {
+        return NextResponse.json({error:'An error occurred.'});
+    }
 }
