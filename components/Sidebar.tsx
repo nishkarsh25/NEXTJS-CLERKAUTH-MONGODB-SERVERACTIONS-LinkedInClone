@@ -46,3 +46,4 @@ const Sidebar = async ({ user }: { user: any }) => {
     )
 }
 
+export default Sidebar
