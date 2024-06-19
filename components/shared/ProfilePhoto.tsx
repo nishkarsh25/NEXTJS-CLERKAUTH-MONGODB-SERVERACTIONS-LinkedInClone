@@ -12,3 +12,4 @@ const ProfilePhoto = ({ src }: { src: string }) => {
     )
 }
 
+export default ProfilePhoto
