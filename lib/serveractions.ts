@@ -52,7 +52,17 @@ export const createPostAction = async (inputText: string, selectedFile: string) 
         throw new Error(error);
     }
 }
-
+// get all post using server actions
+export const getAllPosts = async () => {
+    try {
+        await connectDB();
+        const posts = await Post.find().sort({ createdAt: -1 }).populate({ path: 'comments', options: { sort: { createdAt: -1 } } });
+        if(!posts) return [];
+        return JSON.parse(JSON.stringify(posts));
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 
