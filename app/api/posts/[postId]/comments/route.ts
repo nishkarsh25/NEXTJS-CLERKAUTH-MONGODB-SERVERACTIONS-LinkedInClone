@@ -15,6 +15,6 @@ export const GET = async (req:NextRequest, {params}:{params:{postId:string}}) =>
         });
         return NextResponse.json(comments);
     } catch (error) {
-        
+        return NextResponse.json({error:'an error occurred.'});
     }
 }
