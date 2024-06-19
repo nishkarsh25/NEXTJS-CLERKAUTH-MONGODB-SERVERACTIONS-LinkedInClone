@@ -46,4 +46,4 @@ const postSchema = new mongoose.Schema<IPostDocument>({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Comment'
     }]
-});
+},{timestamps:true});
