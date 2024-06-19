@@ -15,5 +15,14 @@ export const GET = async (req:NextRequest, {params}:{params:{postId:string}}) =>
 }
 // post likes
 export const POST = async (req:NextRequest, {params}:{params:{postId:string}}) => {
-    
+    try {
+        await connectDB();
+        const userId = await req.json();
+        const post = await Post.findById({_id:params.postId});
+        if(!post) return NextResponse.json({error:'Post not found.'});
+        await post.updateOne({$addToSet:{likes:userId}});
+        return NextResponse.json({message:"Post liked successfully."});
+    } catch (error:any) {
+        
+    }
 }
