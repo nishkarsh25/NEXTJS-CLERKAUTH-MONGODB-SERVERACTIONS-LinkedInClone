@@ -64,5 +64,23 @@ export const getAllPosts = async () => {
     }
 }
 
+// delete post by id
+export const deletePostAction = async (postId: string) => {
+    await connectDB();
+    const user = await currentUser();
+    if (!user) throw new Error('User not authenticated.');
+    const post = await Post.findById(postId);
+    if (!post) throw new Error('Post not found.');
 
+    // keval apni hi post delete kr payega.
+    if (post.user.userId !== user.id) {
+        throw new Error('You are not an owner of this Post.');
+    }
+    try {
+        await Post.deleteOne({ _id: postId });
+        revalidatePath("/");
+    } catch (error: any) {
+        throw new Error('An error occurred', error);
+    }
+}
 
