@@ -47,3 +47,4 @@ const postSchema = new mongoose.Schema<IPostDocument>({
         ref:'Comment'
     }]
 },{timestamps:true});
+export const Post : Model<IPostDocument> = mongoose.models?.Post || mongoose.model<IPostDocument>("Post", postSchema);
