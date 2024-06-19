@@ -15,3 +15,4 @@ const Comments = ({post}:{post:IPostDocument}) => {
   )
 }
 
+export default Comments
