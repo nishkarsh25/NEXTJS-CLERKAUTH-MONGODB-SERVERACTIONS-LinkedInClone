@@ -33,4 +33,4 @@ const commentSchema = new mongoose.Schema<ICommentDocument>({
             required:true
         }
     }
-});
+},{timestamps:true});
