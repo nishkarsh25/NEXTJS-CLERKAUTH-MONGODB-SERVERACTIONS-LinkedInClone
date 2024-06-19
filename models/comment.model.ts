@@ -10,4 +10,4 @@ export interface ICommentDocument extends IComment, Document{
     updatedAt:Date
 }
 
-
+const commentSchema = new mongoose.Schema<ICommentDocument>();
