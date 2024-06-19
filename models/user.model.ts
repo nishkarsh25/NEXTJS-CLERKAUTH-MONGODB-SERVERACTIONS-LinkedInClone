@@ -32,4 +32,4 @@ const userSchema = new mongoose.Schema<IUserDocument>({
         type:String,
         default:""
     }
-});
+},{timestamps:true});
