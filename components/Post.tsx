@@ -48,3 +48,4 @@ const Post = ({ post }: { post: IPostDocument }) => {
     )
 }
 
+export default Post
