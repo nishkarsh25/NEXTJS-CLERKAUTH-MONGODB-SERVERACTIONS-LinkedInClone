@@ -32,3 +32,4 @@ const CommentInput = ({ postId }: { postId: string }) => {
     )
 }
 
+export default CommentInput
