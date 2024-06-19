@@ -44,6 +44,19 @@ const navItems:NAVITEMS[] = [
 ]
 
 const NavItems = () => {
-  
+  return (
+    <div className='flex gap-8'>
+        {
+            navItems.map((navItem, index)=>{
+                return (
+                    <div key={index} className='flex flex-col items-center cursor-pointer text-[#666666] hover:text-black'>
+                        <span>{navItem.icon}</span>
+                        <Link className='text-xs' href={navItem.src}>{navItem.text}</Link>
+                    </div>
+                )
+            })
+        }
+    </div>
+  )
 }
 
