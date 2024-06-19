@@ -15,6 +15,33 @@ interface NAVITEMS {
     text:string
 }
 
+const navItems:NAVITEMS[] = [
+    {
+        src: "/home",
+        icon: <Home />,
+        text: "Home",
+    },
+    {
+        src: "/networks",
+        icon: <Users />,
+        text: "My Network",
+    },
+    {
+        src: "/job",
+        icon: <BriefcaseBusiness />,
+        text: "Jobs",
+    },
+    {
+        src: "/message",
+        icon: <MessageCircleMore />,
+        text: "Messaging",
+    },
+    {
+        src: "/notification",
+        icon: <Bell />,
+        text: "Notification",
+    },
+]
 
 
 
