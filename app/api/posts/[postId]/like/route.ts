@@ -23,6 +23,6 @@ export const POST = async (req:NextRequest, {params}:{params:{postId:string}}) =
         await post.updateOne({$addToSet:{likes:userId}});
         return NextResponse.json({message:"Post liked successfully."});
     } catch (error:any) {
-        
+        return NextResponse.json({error:'An error occurred.'});
     }
 }
