@@ -84,3 +84,33 @@ export const deletePostAction = async (postId: string) => {
     }
 }
 
+export const createCommentAction = async (postId: string, formData: FormData) => {
+    try {
+        const user = await currentUser();
+        if (!user) throw new Error("User not authenticated");
+        const inputText = formData.get('inputText') as string;
+        if (!inputText) throw new Error("Field is required");
+        if (!postId) throw new Error("Post id required");
+
+        const userDatabase: IUser = {
+            firstName: user.firstName || "Patel",
+            lastName: user.lastName || "Mern Stack",
+            userId: user.id,
+            profilePhoto: user.imageUrl
+        }
+        const post = await Post.findById({ _id: postId });
+        if (!post) throw new Error('Post not found');
+
+        const comment = await Comment.create({
+            textMessage: inputText,
+            user: userDatabase,
+        });
+
+        post.comments?.push(comment._id);
+        await post.save();
+
+        revalidatePath("/");
+    } catch (error) {
+        throw new Error('An error occurred')
+    }
+}
