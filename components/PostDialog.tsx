@@ -20,7 +20,9 @@ export function PostDialog({ setOpen, open, src }: { setOpen: any, open: boolean
     const [selectedFile, setSelectedFile] = useState<string>("");
     const [inputText, setInputText] = useState<string>("");
 
-   
+    const changeHandler = (e: any) => {
+        setInputText(e.target.value);
+    }
 
     
     
