@@ -25,3 +25,4 @@ const Comment = ({ comment }: { comment: ICommentDocument }) => {
     )
 }
 
+export default Comment
