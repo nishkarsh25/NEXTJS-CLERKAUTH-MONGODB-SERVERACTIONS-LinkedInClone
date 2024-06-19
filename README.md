@@ -222,27 +222,35 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 #### getAllPosts
 
-- **Description:** Fetches all posts from the database.
+- **Description:** Retrieves all posts stored in the database.
+- **Implementation:** This function fetches all posts asynchronously from the MongoDB database using Mongoose.
 
 #### createPostAction
 
-- **Description:** Creates a new post in the database.
+- **Description:** Creates a new post and stores it in the database.
+- **Implementation:** This action accepts text content and an optional image file, uploads the image to a cloud storage service (if provided), and then saves the post details in MongoDB using Mongoose.
 
 #### likePostAction
 
-- **Description:** Likes a post.
+- **Description:** Adds a user's like to a specific post.
+- **Implementation:** This action updates the likes array for a post document in MongoDB, ensuring that each user can like a post only once.
 
 #### dislikePostAction
 
-- **Description:** Removes a like from a post.
+- **Description:** Removes a user's like from a specific post.
+- **Implementation:** This action removes a user's like from the likes array of a post document in MongoDB, effectively reversing the operation of `likePostAction`.
 
 #### createCommentAction
 
-- **Description:** Adds a comment to a post.
+- **Description:** Posts a new comment on a specific post.
+- **Implementation:** This action adds a new comment to the comments array of a post document in MongoDB, associating the comment with the corresponding post.
 
 #### deleteCommentAction
 
-- **Description:** Deletes a comment from a post.
+- **Description:** Deletes a comment from a specific post.
+- **Implementation:** This action removes a comment from the comments array of a post document in MongoDB, ensuring that only authorized users can delete comments they have posted.
+
+These server actions encapsulate the core functionalities of interacting with posts and comments within the LinkedIn clone application. Each action is designed to manage specific operations related to posts and comments stored in the MongoDB database. Adjustments can be made based on specific business logic and security requirements.
 
 
 
