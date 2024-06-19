@@ -21,3 +21,4 @@ const PostContent = ({ post }: { post: IPostDocument }) => {
   )
 }
 
+export default PostContent
