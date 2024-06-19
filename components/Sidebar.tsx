@@ -5,7 +5,7 @@ import { getAllPosts } from '@/lib/serveractions'
 
 const Sidebar = async ({ user }: { user: any }) => {
 
-    
+    const posts = await getAllPosts();
     
 }
 
