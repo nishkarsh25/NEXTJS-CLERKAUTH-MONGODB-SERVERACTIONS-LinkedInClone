@@ -36,7 +36,7 @@ LinkedIn Clone is a web application designed to replicate the features and user 
 
 ## Live Demo
 
-You can try out the live demo of the app [here](https://nextjs-oneentry-headless-cms-blogapp.onrender.com/).
+You can try out the live demo of the app [here](https://nextjs-clerkauth-mongodb-serveractions.onrender.com).
 
 ## Folder Structure
 ```
@@ -177,45 +177,64 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### Get All Posts
 
-- **Description:** Fetches all posts from the server.
+- **Description:** Fetches all posts currently available on the platform.
 - **Method:** `GET`
 - **Endpoint:** `/api/posts`
+- **Response:** Returns an array of posts with details like post ID, content, author information, creation timestamp, likes count, and comments.
 
 ### Create a Post
 
-- **Description:** Creates a new post.
+- **Description:** Posts a new update to the platform.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts`
+- **Request Body:** JSON object containing `content` (your message) and optionally `imageUrl` (for attaching an image).
+- **Response:** Returns the newly created post with all its details, including a unique post ID and timestamp.
 
 ### Like a Post
 
-- **Description:** Likes a specific post.
+- **Description:** Shows appreciation for a specific post.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts/:postId/like`
+- **Request Parameters:** `postId` (ID of the post to like).
+- **Request Body:** JSON object containing `userId` (your unique ID).
+- **Response:** Updates the likes count of the post and confirms your action.
 
 ### Dislike a Post
 
-- **Description:** Removes a like from a specific post.
+- **Description:** Takes back your like from a post.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts/:postId/dislike`
+- **Request Parameters:** `postId` (ID of the post to dislike).
+- **Request Body:** JSON object containing `userId` (your unique ID).
+- **Response:** Updates the likes count accordingly.
 
 ### Get Post Likes
 
-- **Description:** Retrieves likes for a specific post.
+- **Description:** Retrieves the list of people who liked a specific post.
 - **Method:** `GET`
 - **Endpoint:** `/api/posts/:postId/like`
+- **Request Parameters:** `postId` (ID of the post to fetch likes for).
+- **Response:** Returns an array of user IDs who liked the post.
 
 ### Create a Comment
 
-- **Description:** Adds a comment to a specific post.
+- **Description:** Adds your thoughts to a post.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts/:postId/comments`
+- **Request Parameters:** `postId` (ID of the post to comment on).
+- **Request Body:** JSON object containing `userId` (your unique ID) and `text` (your comment).
+- **Response:** Returns the new comment's details, including its ID and timestamp.
 
 ### Delete a Comment
 
-- **Description:** Deletes a comment from a specific post.
+- **Description:** Removes your comment from a post.
 - **Method:** `DELETE`
 - **Endpoint:** `/api/posts/:postId/comments/:commentId`
+- **Request Parameters:** `postId` (ID of the post containing the comment) and `commentId` (ID of your comment).
+- **Response:** Confirms the deletion of your comment.
+
+These API endpoints power the LinkedIn clone's core functionalities for interacting with posts and comments. They enable seamless sharing, liking, commenting, and management of content, enhancing user engagement and interaction within the platform.
+
 
 
 ## Server Actions
