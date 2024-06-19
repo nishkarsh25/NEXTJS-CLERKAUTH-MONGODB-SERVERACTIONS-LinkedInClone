@@ -12,4 +12,38 @@ export interface IPostDocument extends IPost, Document{
     createdAt:Date,
     updatedAt:Date
 }
-const postSchema = new mongoose.Schema<IPostDocument>();
+const postSchema = new mongoose.Schema<IPostDocument>({
+    description:{
+        type:String,
+        required:true
+    },
+    user:{
+        userId:{
+            type:String,
+            required:true
+        },
+        profilePhoto:{
+            type:String,
+            required:true
+        },
+        firstName:{
+            type:String,
+            required:true
+        },
+        lastName:{
+            type:String,
+            required:true
+        }
+    },
+    imageUrl:{
+        type:String,
+        default:"",
+    },
+    likes:{
+        type:[String]
+    },
+    comments:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Comment'
+    }]
+});
