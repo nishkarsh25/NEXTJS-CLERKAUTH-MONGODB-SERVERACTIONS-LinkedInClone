@@ -7,5 +7,9 @@ const connectDB = async () => {
         console.log("Mongodb already connected");
         return isConnected;
     }
-    
+    try {
+        
+    } catch (error) {
+        
+    }
 }
