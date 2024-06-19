@@ -13,6 +13,6 @@ const connectDB = async () => {
         console.log("Mongodb connected.");
         return isConnected;
     } catch (error) {
-        
+        console.log(error);
     }
 }
