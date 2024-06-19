@@ -11,4 +11,9 @@ import SocialOptions from './SocialOptions'
 import ReactTimeago from "react-timeago";
 import { deletePostAction } from '@/lib/serveractions'
 
+const Post = ({ post }: { post: IPostDocument }) => {
+    
+
+    
+}
 
