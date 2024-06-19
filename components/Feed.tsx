@@ -15,3 +15,4 @@ const Feed = async ({user}:{user:any}) => {
   )
 }
 
+export default Feed
