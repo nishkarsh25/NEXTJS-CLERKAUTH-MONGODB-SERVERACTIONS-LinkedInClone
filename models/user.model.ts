@@ -6,4 +6,8 @@ export interface IUser{
     profilePhoto?:string,
     bio?:string
 }
+export interface IUserDocument extends IUser, Document{
+    createdAt:Date,
+    updatedAt:Date
+}
 
