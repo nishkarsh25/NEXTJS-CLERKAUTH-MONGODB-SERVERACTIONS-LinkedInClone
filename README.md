@@ -173,45 +173,45 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-### API Endpoints
+## API Endpoints
 
-#### Get All Posts
+### Get All Posts
 
 - **Description:** Fetches all posts from the server.
 - **Method:** `GET`
 - **Endpoint:** `/api/posts`
 
-#### Create a Post
+### Create a Post
 
 - **Description:** Creates a new post.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts`
 
-#### Like a Post
+### Like a Post
 
 - **Description:** Likes a specific post.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts/:postId/like`
 
-#### Dislike a Post
+### Dislike a Post
 
 - **Description:** Removes a like from a specific post.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts/:postId/dislike`
 
-#### Get Post Likes
+### Get Post Likes
 
 - **Description:** Retrieves likes for a specific post.
 - **Method:** `GET`
 - **Endpoint:** `/api/posts/:postId/like`
 
-#### Create a Comment
+### Create a Comment
 
 - **Description:** Adds a comment to a specific post.
 - **Method:** `POST`
 - **Endpoint:** `/api/posts/:postId/comments`
 
-#### Delete a Comment
+### Delete a Comment
 
 - **Description:** Deletes a comment from a specific post.
 - **Method:** `DELETE`
@@ -220,32 +220,32 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Server Actions
 
-#### getAllPosts
+### getAllPosts
 
 - **Description:** Retrieves all posts stored in the database.
 - **Implementation:** This function fetches all posts asynchronously from the MongoDB database using Mongoose.
 
-#### createPostAction
+### createPostAction
 
 - **Description:** Creates a new post and stores it in the database.
 - **Implementation:** This action accepts text content and an optional image file, uploads the image to a cloud storage service (if provided), and then saves the post details in MongoDB using Mongoose.
 
-#### likePostAction
+### likePostAction
 
 - **Description:** Adds a user's like to a specific post.
 - **Implementation:** This action updates the likes array for a post document in MongoDB, ensuring that each user can like a post only once.
 
-#### dislikePostAction
+### dislikePostAction
 
 - **Description:** Removes a user's like from a specific post.
 - **Implementation:** This action removes a user's like from the likes array of a post document in MongoDB, effectively reversing the operation of `likePostAction`.
 
-#### createCommentAction
+### createCommentAction
 
 - **Description:** Posts a new comment on a specific post.
 - **Implementation:** This action adds a new comment to the comments array of a post document in MongoDB, associating the comment with the corresponding post.
 
-#### deleteCommentAction
+### deleteCommentAction
 
 - **Description:** Deletes a comment from a specific post.
 - **Implementation:** This action removes a comment from the comments array of a post document in MongoDB, ensuring that only authorized users can delete comments they have posted.
