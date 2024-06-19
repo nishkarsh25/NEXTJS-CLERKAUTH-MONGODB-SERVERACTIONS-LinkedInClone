@@ -89,3 +89,4 @@ const SocialOptions = ({ post }: { post: IPostDocument }) => {
     )
 }
 
+export default SocialOptions
