@@ -34,3 +34,4 @@ const commentSchema = new mongoose.Schema<ICommentDocument>({
         }
     }
 },{timestamps:true});
+export const Comment : Model<ICommentDocument> = mongoose.models?.Comment || mongoose.model("Comment", commentSchema);
