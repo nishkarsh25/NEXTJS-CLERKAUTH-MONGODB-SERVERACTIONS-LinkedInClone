@@ -16,6 +16,19 @@ const CommentInput = ({ postId }: { postId: string }) => {
             throw new Error('An error occured');
         }
     }
-    
+    return (
+        <form action={(formData)=> commentActionHandler(formData)}>
+            <div className='flex items-center gap-2'>
+                <ProfilePhoto src={user?.imageUrl!} />
+                <Input
+                    type="text"
+                    name="inputText"
+                    placeholder='Add a comment'
+                    className='rounded-full'
+                />
+                <Button type='submit' variant={'outline'} className='rounded-full'>Send</Button>
+            </div>
+        </form>
+    )
 }
 
