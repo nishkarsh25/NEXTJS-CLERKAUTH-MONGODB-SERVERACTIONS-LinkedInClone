@@ -12,7 +12,9 @@ import ReactTimeago from "react-timeago";
 import { deletePostAction } from '@/lib/serveractions'
 
 const Post = ({ post }: { post: IPostDocument }) => {
-    
+    const { user } = useUser();
+    const fullName = post?.user?.firstName + " " + post?.user?.lastName;
+    const loggedInUser = user?.id === post?.user?.userId;
 
     
 }
