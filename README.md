@@ -36,7 +36,7 @@ LinkedIn Clone is a web application designed to replicate the features and user 
 
 ## Live Demo
 
-You can try out the live demo of the app [here](https://nextjs-clerkauth-mongodb-serveractions.onrender.com).
+You can try out the live demo of the app [here](https://nextjs-clerkauth-mongodb-serveractions-linked-in-clone.vercel.app/).
 
 ## Folder Structure
 ```
